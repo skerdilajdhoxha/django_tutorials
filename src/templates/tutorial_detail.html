@@ -1,0 +1,94 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+<title>{% block head_title %}{{ instance.title }} | {{ block.super }}{% endblock head_title %}</title>
+
+{% block content %}
+
+
+
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{% static 'img/djangodesktop.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <!--<center><h1>Django</h1></center>-->
+                        <!--<center><h3>The Web framework for perfecionists with deadlines.</h3></center>-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<div class="container">
+        <div class="col-sm-8">
+             <div class="post-preview">
+                <h1>{{ instance.title }}</h1>
+                    <p>{{ instance.description }}</p>
+
+            </div>
+        </div>
+</div>
+<hr>
+
+
+
+<div class="container">
+
+        <div class="col-sm-4">
+            <div class="post-preview">
+                {% for b in instance.tutorialdetail_set.all|slice:"0:10" %}
+                    <a href="{% url 'video_detail' pk=b.pk slug=slug %}">
+                    <p>{{ b }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="post-preview">
+                {% for b in instance.tutorialdetail_set.all|slice:"10:20" %}
+                    <a href="{% url 'video_detail' pk=b.pk slug=slug %}">
+                    <p>{{ b }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="post-preview">
+                {% for b in instance.tutorialdetail_set.all|slice:"20:30" %}
+                    <a href="{% url 'video_detail' pk=b.pk slug=slug %}">
+                    <p>{{ b }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="post-preview">
+                {% for b in instance.tutorialdetail_set.all|slice:"30:40" %}
+                    <a href="{% url 'video_detail' pk=b.pk slug=slug %}">
+                    <p>{{ b }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="post-preview">
+                {% for b in instance.tutorialdetail_set.all|slice:"40:50" %}
+                    <a href="{% url 'video_detail' pk=b.pk slug=slug %}">
+                    <p>{{ b }}</p>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    <!--</div>-->
+</div>
+
+
+
+
+{% endblock %}

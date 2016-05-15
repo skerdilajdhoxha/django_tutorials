@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+<head>
+<title>{% block head_title %}{{ instance5.title }} | {{ block.super }}{% endblock head_title %}</title>
+</head>
+
+
+{% block content %}
+
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{% static 'img/djangodesktop.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <!--<center><h1>Django</h1></center>-->
+                        <!--<center><h3>The Web framework for perfecionists with deadlines.</h3></center>-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+<div class="container">
+    {% for a in instance5.tutorial_set.all %}
+        <div class="col-sm-4">
+            <a href="{{ a.get_absolute_url }}">
+            <div class="thumbnail">
+                <img src="{{ a.photo.url }}" class="img-responsive" alt="...">
+            </a>
+                <div class="caption">
+                    <h2>
+                        <div class="post-preview">
+                            <a href="{{ a.get_absolute_url }}">{{ a.title }}</a>
+                        </div>
+                    </h2>
+                    <h4>By: {{ a.author }}</h4>
+                    <p>{{ a.description|truncatechars:50 }}</p>
+                    <p><a href="{{ a.get_absolute_url }}" class="btn btn-default" role="button">View</a></p>
+                 </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<hr>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+{% endblock %}
+
+
+
+
+

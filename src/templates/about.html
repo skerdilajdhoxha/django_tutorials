@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+<title>{% block head_title %}about | {{ block.super }}{% endblock head_title %}</title>
+
+{% block content %}
+
+
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{% static 'img/about-bg.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>About Me</h1>
+                        <hr class="small">
+                        <span class="subheading">This is who I am.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1>Skerdilajd Hoxha</h1>
+                <p>I am a Python and Django future web developer (finger crossed). This is my second project (
+                    <a href="http://myfirstproject.tk" target="_blank">myfirstproject.tk</a>
+                    is my first one), and I hope many are going to come.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+<title>{% block head_title %}{{ instance2.title }} | {{ block.super }}{% endblock head_title %}</title>
+
+{% block content %}
+
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{% static 'img/djangodesktop.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <!--<center><h1>Django</h1></center>-->
+                        <!--<center><h3>The Web framework for perfecionists with deadlines.</h3></center>-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<div class="container">
+    <div class="col-sm-10 col-sm-offset-1">
+        <h1>{{ instance2.title }}</h1>
+            <br/>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/{{ instance2.youtube_id }}" frameborder="0" allowfullscreen></iframe>
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/{{ instance2.youtube_id }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+    </div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{% endblock %}
+
+
+
+

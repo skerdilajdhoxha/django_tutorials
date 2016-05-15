@@ -1,0 +1,69 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+<!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Django</h1>
+                        <hr class="small">
+                        <span class="subheading">If you want to learn Django, this is the right place. You can choose tutorials by difficulty or see all of them by clicking "tutorials" in upper right part of the site. I have to say that none of of the site's tutorials are mine. These are tutorials that I have learned from.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+ <br/>
+<br/>
+<br/>
+
+
+
+<div class="container">
+<div class="col-sm-12">
+{% for obj in instance4|slice:":1" %}
+<a href="{{ obj.get_absolute_url }}">
+<center><img src="{% static 'img/basic2.jpg' %}" class="img-responsive"></center></a>
+{% endfor %}
+    <br/>
+
+</div>
+<div class="col-sm-12">
+{% for obj in instance4|slice:"1:2" %}
+<a href="{{ obj.get_absolute_url }}">
+<center><img src="{% static 'img/basic3.jpg' %}" class="img-responsive"></center></a>
+{% endfor %}
+    <br/>
+
+</div>
+<div class="col-sm-12">
+{% for obj in instance4|slice:"2:3" %}
+<a href="{{ obj.get_absolute_url }}">
+<center><img src="{% static 'img/basic4.jpg' %}" class="img-responsive"></center></a>
+{% endfor %}
+</div>
+</div>
+
+
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+
+
+
+{% endblock %}
+
+
+
